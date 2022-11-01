@@ -1,0 +1,1 @@
+CKFA.Easy.Query
