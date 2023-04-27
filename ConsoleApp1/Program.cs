@@ -78,8 +78,8 @@ List<QueryJoinTable> joinTables = new List<QueryJoinTable>()
 
 #endregion
 
-string querySqlServer = QueryBuilder.BuildQuery(EDatabase.SqlServer, tablename, fields, whereClauses, null, joinTables);
-string queryPostgres = QueryBuilder.BuildQuery(EDatabase.Postgres, tablename, fields, whereClauses, null, joinTables);
+var querySqlServer = QueryBuilder.BuildQuery(EDatabase.SqlServer, tablename, fields, whereClauses, null, joinTables,returnType:QueryReturn.Query);
+var queryPostgres = QueryBuilder.BuildQuery(EDatabase.Postgres, tablename, fields, whereClauses, null, joinTables, returnType: QueryReturn.Query);
 
-Console.WriteLine($"\nQuery SQL Server: {querySqlServer}\n");
-Console.WriteLine($"\nQuery Postgres: {queryPostgres}\n");
+Console.WriteLine($"\nQuery SQL Server: {querySqlServer.Query}\n");
+Console.WriteLine($"\nQuery Postgres: {queryPostgres.Query}\n");
